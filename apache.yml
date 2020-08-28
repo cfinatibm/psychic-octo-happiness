@@ -1,7 +1,6 @@
 ---
 - name: Apache server installed
   hosts: 192.168.3.119
-  become: yes
   tasks:
   - name: latest Apache version installed
     yum:
