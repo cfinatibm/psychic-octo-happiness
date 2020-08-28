@@ -3,8 +3,5 @@
   hosts: 192.168.3.119
   tasks:
     - name: touching the file
-        command: touch /home/ansible-service/ThisIs4me.txt
-  vars:
-    ansible_become: true
-    ansible_become_method: su
-    ansible_become_user: ansible-service
+      command: touch /home/ansible-service/ThisIs4me.txt
+
