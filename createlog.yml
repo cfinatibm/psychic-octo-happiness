@@ -1,4 +1,4 @@
-===
+---
 - name: Create a log file
   hosts: 192.168.3.119
   command: touch /home/ansible-service/ThisIs4me.txt
