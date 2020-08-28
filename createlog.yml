@@ -2,6 +2,9 @@
 - name: "Create a Log File"
   hosts: 192.168.3.119
   tasks:
-    - name: touching the file
-      command: touch /home/ansible-service/ThisIs4me.txt
+    - name: Touch a file, using symbolic modes to set the permissions (equivalent to 0644)
+        file:
+        path: /home/ansible-service/ThisIs4me.txt
+        state: touch
+        mode: u=rw,g=r,o=r
 
