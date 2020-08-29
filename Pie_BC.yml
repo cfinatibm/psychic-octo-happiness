@@ -2,11 +2,12 @@
 - name: "Connect and change user"
   hosts: 192.168.2.169
   remote_user: pi
+  become: yes
   tasks:
   - name: "Ping"
     ping: 
   - name: "Run this command and ignore the result"
-    shell: /usr/bin/ls
+    shell: /bin/ls
     register: COMMAND_RESULTS_HERE
   - debug: msg={{COMMAND_RESULTS_HERE.stdout}}  
   - name: "Check the date on the server."
@@ -32,3 +33,10 @@
       path: /home/ansible-service/foo.conf
       state: touch
       mode: u=rw,g=r,o=r
+   - name: Unconditionally reboot the machine with all defaults
+     reboot:
+   - name: Check the uptime after reboot
+     shell: uptime
+     register: UPTIME_POST_REBOOT
+
+   - debug: msg={{UPTIME_POST_REBOOT.stdout}}
