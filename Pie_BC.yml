@@ -16,7 +16,7 @@
   - name: 'Check the date on the server'
     command: date
     
-  - name: Display the availble timestamp format in Ansible
+  - name: 'Display the availble timestamp format in Ansible'
     debug:
      var=ansible_date_time.date
      
@@ -43,7 +43,7 @@
   - name: 'Unconditionally reboot with defaults / Waits till box is up / requires acess to shutdown command'
     reboot:
     
-  - name: Check the uptime after reboot
+  - name: 'Check the uptime after reboot'
     shell: uptime
     register: UPTIME_POST_REBOOT
   - debug: msg={{UPTIME_POST_REBOOT.stdout}}
