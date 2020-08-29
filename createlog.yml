@@ -13,7 +13,7 @@
     command: date
   - name: Display the availble timestamp format in Ansible
     debug:
-     var=ansible_date_time
+     var=ansible_date_time.date
   - name: Check the uptime of the server
     shell: uptime
     register: UPTIME_PRE_REBOOT
