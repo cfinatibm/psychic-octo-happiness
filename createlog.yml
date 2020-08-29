@@ -1,6 +1,7 @@
 ---
 - name: "Root a log File"
   hosts: 192.168.3.119
+  remote_user: ansible-service
   tasks:
   - name: "Touch the file"
     file:
@@ -8,3 +9,5 @@
       owner: root
       group: root
       mode: '1777'
+  - name: "Ping"
+    ping: 192.168.2.185
