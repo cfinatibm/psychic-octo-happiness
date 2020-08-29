@@ -5,9 +5,6 @@
   tasks:
   - name: "Ping"
     ping: 
-  - name: "Touch the file"
-    file:
-      path: /home/ansible-service/me.txt
-      owner: root
-      group: root
-      mode: '1777'
+  - name: "Run this command and ignore the result"
+    shell: /usr/bin/ls
+    ignore_errors: True
