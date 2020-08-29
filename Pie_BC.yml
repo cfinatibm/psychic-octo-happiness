@@ -1,25 +1,31 @@
 ---
-- name: "Connect and change user"
+- name: 'Connect and su to superuser'
   hosts: 192.168.2.169
   remote_user: pi
   become: yes
+  
   tasks:
-  - name: "Ping"
-    ping: 
-  - name: "Run this command and ignore the result"
+  - name: 'Ping will return Pong if sucessful'
+    ping:
+    
+  - name: 'Run this command and display the result'
     shell: /bin/ls
+    
     register: COMMAND_RESULTS_HERE
   - debug: msg={{COMMAND_RESULTS_HERE.stdout}}  
-  - name: "Check the date on the server."
+  - name: 'Check the date on the server'
     command: date
+    
   - name: Display the availble timestamp format in Ansible
     debug:
      var=ansible_date_time.date
-  - name: Check the uptime of the server
+     
+  - name: 'Check the uptime of the server'
     shell: uptime
     register: UPTIME_PRE_REBOOT
   - debug: msg={{UPTIME_PRE_REBOOT.stdout}}
-  - name: Running sequence of commands using shell module
+  
+  - name: 'Running sequence of commands using shell module'
     shell: |
        echo "fire first command"
        echo "fire second command"
@@ -28,15 +34,16 @@
        echo "fire fifth command"
     register: SEQOUT
   - debug: msg={{SEQOUT.stdout_lines}}
-  - name: Touch a file
+  
+  - name: 'Touch a file currently as root / timestamp or log'
     file:
       path: /home/pi/AnsTest/foo.conf
       state: touch
       mode: u=rw,g=r,o=r
-  - name: Unconditionally reboot the machine with all defaults
+  - name: 'Unconditionally reboot with defaults / Waits till box is up / requires acess to shutdown command'
     reboot:
+    
   - name: Check the uptime after reboot
     shell: uptime
     register: UPTIME_POST_REBOOT
-    
   - debug: msg={{UPTIME_POST_REBOOT.stdout}}
