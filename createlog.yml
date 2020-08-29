@@ -1,8 +1,10 @@
 ---
-- name: "Create a log File"
+- name: "Root a log File"
   hosts: 192.168.3.119
   tasks:
   - name: "Touch the file"
     file:
       path: /home/ansible-service/me.txt
-      state: touch
+      owner: root
+      group: root
+      mode: '1777'
