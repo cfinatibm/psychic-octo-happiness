@@ -9,3 +9,6 @@
     shell: /usr/bin/ls
   - name: "Check the date on the server."
     command: date
+  - name: Display the availble timestamp format in Ansible
+    debug:
+     var=ansible_date_time
