@@ -10,4 +10,4 @@
       group: root
       mode: '1777'
   - name: "Ping"
-    ping: 192.168.2.185
+    ping: 
