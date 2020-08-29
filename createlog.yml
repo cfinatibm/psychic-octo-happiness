@@ -1,6 +1,6 @@
 ---
 - name: "Create a log File"
-- hosts: 192.168.3.119
+  hosts: 192.168.3.119
   tasks:
   - name: "Touch a file, using symbolic modes to set the permissions (equivalent to 0644)"
     file:
