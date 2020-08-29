@@ -7,6 +7,5 @@
     ping: 
   - name: "Run this command and ignore the result"
     shell: /usr/bin/ls
-    ignore_errors: True
   - name: "Check the date on the server."
     command: date
