@@ -1,6 +1,6 @@
 ---
 - name: "Connect and change user"
-  hosts: 192.168.3.119
+  hosts: 192.168.2.169
   remote_user: ansible-service
   tasks:
   - name: "Ping"
