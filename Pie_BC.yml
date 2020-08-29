@@ -33,10 +33,10 @@
       path: /home/ansible-service/foo.conf
       state: touch
       mode: u=rw,g=r,o=r
-   - name: Unconditionally reboot the machine with all defaults
-     reboot:
-   - name: Check the uptime after reboot
-     shell: uptime
-     register: UPTIME_POST_REBOOT
-
-   - debug: msg={{UPTIME_POST_REBOOT.stdout}}
+  - name: Unconditionally reboot the machine with all defaults
+    reboot:
+  - name: Check the uptime after reboot
+    shell: uptime
+    register: UPTIME_POST_REBOOT
+    
+  - debug: msg={{UPTIME_POST_REBOOT.stdout}}
