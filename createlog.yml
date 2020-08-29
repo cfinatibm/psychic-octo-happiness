@@ -3,11 +3,11 @@
   hosts: 192.168.3.119
   remote_user: ansible-service
   tasks:
+  - name: "Ping"
+    ping: 
   - name: "Touch the file"
     file:
       path: /home/ansible-service/me.txt
       owner: root
       group: root
       mode: '1777'
-  - name: "Ping"
-    ping: 
