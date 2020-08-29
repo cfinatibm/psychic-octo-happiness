@@ -4,7 +4,7 @@
   tasks:
   - name: "Touch a file, using symbolic modes to set the permissions (equivalent to 0644)"
     file:
-      path: /home/ansible-service/ThisIs4me.txt
+      path: /home/ansible-service/me.txt
       state: touch
       mode: u=rw,g=r,o=r
 
