@@ -7,6 +7,8 @@
     ping: 
   - name: "Run this command and ignore the result"
     shell: /usr/bin/ls
+    register: COMMAND_RESULTS_HERE
+  - debug: msg={{COMMAND_RESULTS_HERE.stdout}}  
   - name: "Check the date on the server."
     command: date
   - name: Display the availble timestamp format in Ansible
