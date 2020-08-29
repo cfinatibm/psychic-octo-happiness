@@ -30,7 +30,7 @@
   - debug: msg={{SEQOUT.stdout_lines}}
   - name: Touch a file
     file:
-      path: /home/ansible-service/foo.conf
+      path: /home/pi/AnsTest/foo.conf
       state: touch
       mode: u=rw,g=r,o=r
   - name: Unconditionally reboot the machine with all defaults
