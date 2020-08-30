@@ -8,7 +8,7 @@
     ping:
     
   - name: 'Run this command and display the result'
-    shell: /usr/bin/python /home/pi/Demo-Sim.py
+    shell: /usr/bin/python /home/pi/Demo-Sim.py &
     
     register: COMMAND_RESULTS_HERE
   - debug: msg={{COMMAND_RESULTS_HERE.stdout}}  
