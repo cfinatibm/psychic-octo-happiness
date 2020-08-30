@@ -2,8 +2,7 @@
 - name: 'Connect and su to superuser'
   hosts: 192.168.2.169
   remote_user: pi
-  become: yes
-  
+    
   tasks:
   - name: 'Ping will return Pong if sucessful'
     ping:
@@ -40,6 +39,12 @@
       path: /home/pi/AnsTest/foo.conf
       state: touch
       mode: u=rw,g=r,o=r
+  
+  
+  
+  hosts: 192.168.2.169
+  tasks:
+  become: yes
   - name: 'Unconditionally reboot with defaults / Waits till box is up / requires acess to shutdown command'
     reboot:
     
