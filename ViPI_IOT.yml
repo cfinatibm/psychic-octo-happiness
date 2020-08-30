@@ -8,7 +8,7 @@
     ping:
     
   - name: 'Run this command and display the result'
-    shell: /bin/ls
+    shell: /usr/bin/python /home/pi/Demo-Sim.py
     
     register: COMMAND_RESULTS_HERE
   - debug: msg={{COMMAND_RESULTS_HERE.stdout}}  
@@ -36,16 +36,7 @@
   
   - name: 'Touch a file currently as root / timestamp or log'
     file:
-      path: /home/pi/AnsTest/foo.conf
+      path: /home/pi/AnsTest/timestamp.txt
       state: touch
       mode: u=rw,g=r,o=r
-  
-  hosts: 192.168.2.169
-  tasks:
-  - name: 'Unconditionally reboot with defaults / Waits till box is up / requires acess to shutdown command'
-    reboot:
-    
-  - name: 'Check the uptime after reboot'
-    shell: uptime
-    register: UPTIME_POST_REBOOT
-  - debug: msg={{UPTIME_POST_REBOOT.stdout}}
+
