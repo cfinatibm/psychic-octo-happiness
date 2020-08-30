@@ -6,7 +6,16 @@
   tasks:
   - name: 'Ping will return Pong if sucessful'
     ping:
-    
+
+  - name: Getting process IDs of the process
+    pids:
+        name: python
+    register: pids_of_python
+
+  - name: Printing the process IDs obtained
+    debug:
+      msg: "PIDS of python:{{pids_of_python.pids|join(',')}}"
+
   - name: 'Run this command and display the result'
     shell: /usr/bin/python /home/pi/FixedSim.py &
     
