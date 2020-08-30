@@ -37,16 +37,13 @@
   
   - name: 'Touch a file currently as root / timestamp or log'
     file:
-      path: /home/pi/AnsTest/poot.conf.txt
+      path: /home/pi/AnsTest/foo.conf
       state: touch
       mode: u=rw,g=r,o=r
-    tasks:
-  reboot:
-
-
-- name: 'Connect and su to superuser'
-
-    - name: 'Check the uptime after reboot'
+  - name: 'Unconditionally reboot with defaults / Waits till box is up / requires acess to shutdown command'
+    reboot:
+    
+  - name: 'Check the uptime after reboot'
     shell: uptime
     register: UPTIME_POST_REBOOT
   - debug: msg={{UPTIME_POST_REBOOT.stdout}}
