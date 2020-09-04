@@ -19,21 +19,21 @@
 # We need to run a shell command to identify the Python process running that is not ANSIBLE!
 
   - name: 'Run this command and display the result'
-    shell: /usr/bin/python /home/pi/VIoT/FixedSim.py &
-    
-    register: COMMAND_RESULTS_HERE
-  - debug: msg={{COMMAND_RESULTS_HERE.stdout}}
-  
-  
-  - name: 'Run this command and display the result'
-    shell: /bin/ps -ef | grep Fixed | grep py
-    
-    register: COMMAND_RESULTS_HERE
-  - debug: msg={{COMMAND_RESULTS_HERE.stdout}}
-  
-  
-  - name: 'Run this command and display the result'
     shell: /usr/bin/python /home/pi/VIoT/Demo.Sim.py &
+    
+    register: COMMAND_RESULTS_HERE
+  - debug: msg={{COMMAND_RESULTS_HERE.stdout}}
+  
+  
+  - name: 'Run this command to find the process ID of Demo'
+    shell: /bin/ps -ef | grep Demo | grep py
+    
+    register: COMMAND_RESULTS_HERE
+  - debug: msg={{COMMAND_RESULTS_HERE.stdout}}
+  
+  
+  - name: 'Run this command and display the result'
+    shell: /usr/bin/python /home/pi/VIoT/FixedSim.py &
     
     register: COMMAND_RESULTS_HERE
   - debug: msg={{COMMAND_RESULTS_HERE.stdout}}
