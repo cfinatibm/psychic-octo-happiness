@@ -1,5 +1,5 @@
 ---
-- name: 'Connect and su to superuser'
+- name: 'Connect as a regular user pi'
   hosts: 192.168.2.169
   remote_user: pi
     
@@ -15,6 +15,7 @@
   - name: Printing the process IDs obtained
     debug:
       msg: "PIDS of python:{{pids_of_python.pids|join(',')}}"
+      msg: "PIDS of script:{{pids_of_python.pids}}"
 
 # We need to run a shell command to identify the Python process running that is not ANSIBLE!
 
