@@ -14,8 +14,7 @@
 
   - name: Printing the process IDs obtained
     debug:
-#     msg: "PIDS of python:{{pids_of_python.pids|join(',')}}"
-      msg: "PIDS of script:{{pids_of_python.pids|!join(',')}}"
+     msg: "PIDS of python:{{pids_of_python.pids|join(',')}}"
 
 # We need to run a shell command to identify the Python process running that is not ANSIBLE!
 
