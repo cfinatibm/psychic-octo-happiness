@@ -15,6 +15,6 @@
 
   - name: Check for Plex Media Server running
     service:
-      name: httpd
+      name: plexmediaserver
       enabled: true
       state: started
