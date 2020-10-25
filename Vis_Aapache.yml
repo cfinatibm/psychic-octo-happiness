@@ -12,3 +12,9 @@
       name: httpd
       enabled: true
       state: started
+
+  - name: Check for Plex Media Server running
+    service:
+      name: httpd
+      enabled: true
+      state: started
