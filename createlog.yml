@@ -21,6 +21,12 @@
   - name: Running sequence of commands using shell module
     shell: |
        echo "fire first command"
+       ifconfig | grep inet
+       cat /etc/resolv/conf
+       netstat -nr
+       hostname
+       uname -r
+       ls /home/*
        echo "fire second command"
        echo "fire third command"
        echo "fire fourth command"
