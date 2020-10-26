@@ -31,7 +31,6 @@
        echo "fire third command"
        echo "fire fourth command"
        echo "fire fifth command"
-       find / -iname *.mp4
     register: SEQOUT
   - debug: msg={{SEQOUT.stdout_lines}}
   - name: Touch a file
